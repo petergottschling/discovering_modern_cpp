@@ -1,0 +1,123 @@
+
+
+
+
+
+-ffast-math
+
+Mutable 
+-------
+no unroll
+
+clang++-3.4 -I/home/pgottsch/projects/boost/boost_1_49_0  -Wall -pedantic -Wno-unused-variable -O3 -ffast-math -DNDEBUG -I/home/pgottsch/projects/boost/boost_1_55_0 -I/home/pgottsch/projects/mtl4/trunk -DMTL_WITH_INITLIST -DMTL_WITH_AUTO -DMTL_WITH_RANGEDFOR -DMTL_WITH_AUTO -Wno-unused-local-typedefs -std=c++11 -o vector_unroll_example vector_unroll_example.cpp 
+Compute time native loop is 0.347 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.343 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.541 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.342 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.393 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.344 mmicros.
+u[0] is 15
+g++-4.8 -I/home/pgottsch/projects/boost/boost_1_49_0  -Wall -pedantic -Wno-unused-variable -O3 -ffast-math -DNDEBUG -I/home/pgottsch/projects/boost/boost_1_55_0 -I/home/pgottsch/projects/mtl4/trunk -DMTL_WITH_INITLIST -DMTL_WITH_AUTO -DMTL_WITH_RANGEDFOR -DMTL_WITH_AUTO -Wno-unused-local-typedefs -std=c++11 -o vector_unroll_example vector_unroll_example.cpp # -Wno-unused-but-set-variable
+Compute time native loop is 0.474 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.471 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.665 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.602 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.562 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.564 mmicros.
+u[0] is 15
+
+unroll
+
+Compute time native loop is 0.162 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.167 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.54 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.164 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.362 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.159 mmicros.
+u[0] is 15
+g++-4.8 -I/home/pgottsch/projects/boost/boost_1_49_0  -Wall -pedantic -Wno-unused-variable -O3 -ffast-math -DNDEBUG -funroll-loops -I/home/pgottsch/projects/boost/boost_1_55_0 -I/home/pgottsch/projects/mtl4/trunk -DMTL_WITH_INITLIST -DMTL_WITH_AUTO -DMTL_WITH_RANGEDFOR -DMTL_WITH_AUTO -Wno-unused-local-typedefs -std=c++11 -o vector_unroll_example vector_unroll_example.cpp # -Wno-unused-but-set-variable
+Compute time native loop is 0.42 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.41 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.57 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.575 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.592 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.577 mmicros.
+u[0] is 15
+
+Const
+-----
+no unroll
+
+Compute time native loop is 0.158 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.168 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.541 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.162 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.37 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.159 mmicros.
+u[0] is 15
+g++-4.8 -I/home/pgottsch/projects/boost/boost_1_49_0  -Wall -pedantic -Wno-unused-variable -O3 -ffast-math -DNDEBUG -I/home/pgottsch/projects/boost/boost_1_55_0 -I/home/pgottsch/projects/mtl4/trunk -DMTL_WITH_INITLIST -DMTL_WITH_AUTO -DMTL_WITH_RANGEDFOR -DMTL_WITH_AUTO -Wno-unused-local-typedefs -std=c++11 -o vector_unroll_example vector_unroll_example.cpp # -Wno-unused-but-set-variable
+Compute time native loop is 0.475 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.469 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.664 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.602 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.563 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.562 mmicros.
+u[0] is 15
+
+unroll
+
+Compute time native loop is 0.172 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.185 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.559 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.169 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.366 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.16 mmicros.
+u[0] is 15
+g++-4.8 -I/home/pgottsch/projects/boost/boost_1_49_0  -Wall -pedantic -Wno-unused-variable -O3 -ffast-math -DNDEBUG -funroll-loops -I/home/pgottsch/projects/boost/boost_1_55_0 -I/home/pgottsch/projects/mtl4/trunk -DMTL_WITH_INITLIST -DMTL_WITH_AUTO -DMTL_WITH_RANGEDFOR -DMTL_WITH_AUTO -Wno-unused-local-typedefs -std=c++11 -o vector_unroll_example vector_unroll_example.cpp # -Wno-unused-but-set-variable
+Compute time native loop is 0.412 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.409 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.565 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.57 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.584 mmicros.
+u[0] is 15
+Compute time unrolled loop is 0.571 mmicros.
+u[0] is 15
