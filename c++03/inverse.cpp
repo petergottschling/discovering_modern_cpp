@@ -69,34 +69,34 @@ int main (int argc, char* argv[])
        1, 5, 3,
        2, 6, 9;
 
-    cout << "A ist\n" << A;
+    cout << "A is\n" << A;
 
-    Matrix LU(A); // Kopie von A
+    Matrix LU(A); // Copy of A
     dense_vector<unsigned>  Pv(size);
     lu(LU, Pv);
     Matrix P(permutation(Pv));
 
-    cout << "LU ist\n" << LU;
-    cout << "Permutation vector is " << Pv << "\nPermutationsmatrix ist\n" << P;
+    cout << "LU is\n" << LU;
+    cout << "Permutation vector is " << Pv << "\nPermutation matrix is\n" << P;
 
     Matrix I(mat::identity(size, size)), L(I + strict_lower(LU)), U(upper(LU));
-    cout << "L ist\n" << L << "U ist\n" << U;
+    cout << "L is\n" << L << "U is\n" << U;
 
     Matrix UI(inverse_upper(U));
-    cout << "Inverse von U ist\n" << UI << "UI * U ist\n" << Matrix(UI * U);
+    cout << "Inverse of U is\n" << UI << "UI * U is\n" << Matrix(UI * U);
     assert(one_norm(Matrix(UI * U - I)) < eps);
 
     Matrix LI(inverse_lower(L));
-    cout << "Inverse von L ist\n" << LI << "LI * L ist\n" << Matrix(LI * L);
+    cout << "Inverse of L is\n" << LI << "LI * L is\n" << Matrix(LI * L);
     assert(one_norm(Matrix(LI * L - I)) < eps);
 
 
     Matrix AI(UI * LI * P);
-    cout << "Inverse von A ist\n" << AI << "AI * A ist\n" << Matrix(AI * A);
+    cout << "Inverse of A is\n" << AI << "AI * A is\n" << Matrix(AI * A);
     assert(one_norm(Matrix(AI * A - I)) < eps);
     
     Matrix A_inverse(inverse(A));
-    cout << "Inverse von A ist\n" << A_inverse << "A_inverse * A ist\n" << Matrix(A_inverse * A);
+    cout << "Inverse of A is\n" << A_inverse << "A_inverse * A is\n" << Matrix(A_inverse * A);
     assert(one_norm(Matrix(A_inverse * A - I)) < eps);
 
     return 0 ;
