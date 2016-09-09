@@ -25,7 +25,7 @@ struct vector
     vector<T>& operator&=(const U& value)
     {
     	for (int i= 0; i < s; ++i)
-    	    *data&= value;
+    	    data[i]&= value;
     	std::cout << "&=\n";
     	return *this;
     }
@@ -35,7 +35,7 @@ struct vector
     vector<T>& operator&=(const T& value) // error
     {
     	for (int i= 0; i < s; ++i)
-    	    *data&= value;
+    	    data[i]&= value;
     	std::cout << "&=\n";
     	return *this;
     }
@@ -52,7 +52,7 @@ template <typename T, typename= enable_if_t<std::is_integral<T>::value> >
 vector<T>& operator|=(vector<T>& v, int mask)
 {
     for (int i= 0; i < v.s; ++i)
-	*v.data|= mask;
+	v.data[i]|= mask;
     std::cout << "|=\n";
     return v;
 }
@@ -61,7 +61,7 @@ vector<T>& operator|=(vector<T>& v, int mask)
 // vector<T>& operator=(vector<T>& v, int value)
 // {
 //     for (int i= 0; i < v.s; ++i)
-// 	*v.data= value;
+// 	v.data[i]= value;
 //     std::cout << "Assignment\n";
 //     return v;
 // }
@@ -70,7 +70,7 @@ template <typename T, typename= enable_if_t<std::is_integral<T>::value> >
 vector<T>& operator++(vector<T>& v)
 {
     for (int i= 0; i < v.s; ++i)
-	++*v.data;
+	++v.data[i];
     std::cout << "++\n";
     return v;
 }
