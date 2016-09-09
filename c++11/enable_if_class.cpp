@@ -49,7 +49,7 @@ struct vector
 
 
 template <typename T, typename= enable_if_t<std::is_integral<T>::value> >
-vector<T>& operator|=(vector<T>& v, int mask)
+vector<T>& operator|=(vector<T>& v, const T& mask)
 {
     for (int i= 0; i < v.s; ++i)
 	v.data[i]|= mask;
