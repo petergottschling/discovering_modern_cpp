@@ -38,7 +38,7 @@ int main (int argc, char* argv[])
     print_compiler();
 
     cdouble z(-6, 1);
-    auto nz= gradient_descent(z, 0.05, 0.001, f, g);
+    auto x= gradient_descent(z, 0.05, 0.001, f, g);
     cout << "Found local minimum at (" <<  real(x)<< ", " << imag(x) << ")\n";
 
     return 0;
