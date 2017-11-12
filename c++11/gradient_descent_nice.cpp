@@ -39,7 +39,7 @@ int main (int argc, char* argv[])
 
     cdouble z(-6, 1);
     auto nz= gradient_descent(z, 0.05, 0.001, f, g);
-    cout << "Found local minimum at (" <<  real(x)<< ", " << imag(x) << ")\n";
+    cout << "Found local minimum at (" <<  real(nz)<< ", " << imag(nz) << ")\n";
 
     return 0;
 }
